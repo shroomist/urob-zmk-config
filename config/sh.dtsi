@@ -1,21 +1,13 @@
-
 #define SH_SHORT_TAP 150
-
-#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
-
-&lt {
-  tapping-term-ms = <SH_SHORT_TAP>;
-};
 
 ZMK_BEHAVIOR(sh_llt, hold_tap,
   flavor = "balanced";
   tapping-term-ms = <SH_SHORT_TAP>;
   quick-tap-ms = <QUICK_TAP_MS>;
   global-quick-tap;
-  bindings = <&kp>, <&kp>;
-  hold-trigger-key-positions = <KEYS_R>;
+  bindings = <&mo>, <&kp>;
+  retro-tap;
+  /* hold-trigger-key-positions = <KEYS_R THUMBS>; */
 )
 
 ZMK_BEHAVIOR(sh_rlt, hold_tap,
@@ -23,8 +15,9 @@ ZMK_BEHAVIOR(sh_rlt, hold_tap,
   tapping-term-ms = <SH_SHORT_TAP>;
   quick-tap-ms = <QUICK_TAP_MS>;
   global-quick-tap;
-  bindings = <&kp>, <&kp>;
-  hold-trigger-key-positions = <KEYS_L>;
+  bindings = <&mo>, <&kp>;
+  retro-tap;
+  /* hold-trigger-key-positions = <KEYS_L THUMBS>; */
 )
 /*
  * Shifted Backspace deletes + Layer Tap
@@ -39,5 +32,3 @@ ZMK_BEHAVIOR(sh_bspc_del_num, mod_morph,
   bindings = <&lt NUM BSPC>, <&kp DEL>;
   keep-mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT|MOD_RGUI|MOD_LCTL|MOD_LALT)>;
 )
-
-// dfjhnm,./piuyqwertdcvb

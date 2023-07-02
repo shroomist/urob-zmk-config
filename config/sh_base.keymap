@@ -30,6 +30,8 @@
 /* Global settings */
 
 #define QUICK_TAP_MS 175
+#define GLOBAL_QUICK_TAP_MS 125
+#define TAPPING_TERM_MS 175
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s
@@ -42,7 +44,7 @@
 
 &lt {  // layer-tap config
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
@@ -55,9 +57,9 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_BEHAVIOR(NAME, hold_tap, \
         flavor = "balanced"; \
-        tapping-term-ms = <280>; \
+        tapping-term-ms = <TAPPING_TERM_MS>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        global-quick-tap-ms = <150>; \
+        global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
@@ -74,8 +76,8 @@ MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 // long-tap action on hold, short-tap action on all interrupts
 #define MT_CORE \
     flavor = "tap-preferred"; \
-    tapping-term-ms = <220>; \
-    quick-tap-ms = <220>; \
+    tapping-term-ms = <TAPPING_TERM_MS>; \
+    quick-tap-ms = <QUICK_TAP_MS>; \
     hold-trigger-key-positions = <0>;
 
 &mt { MT_CORE };
@@ -113,12 +115,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 #define SMART_NUM &smart_num NUM 0
 ZMK_BEHAVIOR(smart_num, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&num_dance>;
 )
 ZMK_BEHAVIOR(num_dance, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
 &num_word {  // num-word, requires PR #1451
@@ -184,7 +186,7 @@ ZMK_BEHAVIOR(uc_shift, macro,
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&spc_morph>;
 )
@@ -237,7 +239,7 @@ ZMK_BEHAVIOR(win_sleep, macro,
 #define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
 #define VOL_DOWN    &hmr LCTRL C_VOL_DN
 
-/* #include "sh.dtsi" */
+#include "sh.dtsi"
 
 /* Keymap */
 
@@ -263,7 +265,7 @@ ZMK_LAYER(nav,
 // ├──────┤ ├───────────┼──────────┼───────────┼──────────┼────────────────────────┤    ├───────────────┼───────────────┼───────────────┼──────────────┼───────┤├──────┤
      X_LB    ___            ___       ___      &kp LG(LBKT)     &kp LG(RBKT)               &kp RG(LEFT)    &kp RA(LEFT)   &kp RA(RIGHT)    &kp RG(RIGHT)  ___     X_RB
 // ├──────┤ ╰───────────┴──────────┼───────────┼──────────┼────────────────────────┤    ├───────────────┼───────────────┼───────────────┼──────────────┴───────╯├──────┤
-     X_LH                                           ___           ___         ___                   &kp LT       &kp GT           ___                         X_RH
+     X_LH                                           ___           ___         ___                   ___          ___           ___                         X_RH
 // ╰──────╯                                       ╰──────────────┴──────────┴────────────────╯    ╰─────────────┴────────────┴────────────────╯                 ╰──────╯
 
 /* //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ */
@@ -361,39 +363,4 @@ ZMK_LAYER(mouse,
 )
 
 
-#define SH_SHORT_TAP 150
-&lt {
-  tapping-term-ms = <SH_SHORT_TAP>;
-};
-
-ZMK_BEHAVIOR(sh_llt, hold_tap,
-  flavor = "balanced";
-  tapping-term-ms = <SH_SHORT_TAP>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-  global-quick-tap;
-  bindings = <&mo>, <&kp>;
-  /* hold-trigger-key-positions = <KEYS_R THUMBS>; */
-)
-
-ZMK_BEHAVIOR(sh_rlt, hold_tap,
-  flavor = "balanced";
-  tapping-term-ms = <SH_SHORT_TAP>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-  global-quick-tap;
-  bindings = <&mo>, <&kp>;
-  /* hold-trigger-key-positions = <KEYS_L THUMBS>; */
-)
-/*
- * Shifted Backspace deletes + Layer Tap
- *
- * Usage: &shmm_bspc_del_layer
- * Tap: Backspace
- * Shift-Tap: Delete
- * Hold: Switch layer
-*/
-ZMK_BEHAVIOR(sh_bspc_del_num, mod_morph,
-  mods = <(MOD_LSFT|MOD_RSFT)>;
-  bindings = <&lt NUM BSPC>, <&kp DEL>;
-  keep-mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT|MOD_RGUI|MOD_LCTL|MOD_LALT)>;
-)
 /* vim: set ft=c tw=174: */
