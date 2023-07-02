@@ -29,9 +29,9 @@
 
 /* Global settings */
 
-#define QUICK_TAP_MS 175
-#define GLOBAL_QUICK_TAP_MS 125
-#define TAPPING_TERM_MS 175
+#define QUICK_TAP_MS 125
+#define GLOBAL_QUICK_TAP_MS 100
+#define TAPPING_TERM_MS 125
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s

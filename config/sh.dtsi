@@ -1,10 +1,10 @@
-#define SH_SHORT_TAP 150
+#define SH_SHORT_TAP 100
 
 ZMK_BEHAVIOR(sh_llt, hold_tap,
   flavor = "balanced";
   tapping-term-ms = <SH_SHORT_TAP>;
   quick-tap-ms = <QUICK_TAP_MS>;
-  global-quick-tap;
+  global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
   bindings = <&mo>, <&kp>;
   retro-tap;
   /* hold-trigger-key-positions = <KEYS_R THUMBS>; */
@@ -14,6 +14,7 @@ ZMK_BEHAVIOR(sh_rlt, hold_tap,
   flavor = "balanced";
   tapping-term-ms = <SH_SHORT_TAP>;
   quick-tap-ms = <QUICK_TAP_MS>;
+  global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
   global-quick-tap;
   bindings = <&mo>, <&kp>;
   retro-tap;
