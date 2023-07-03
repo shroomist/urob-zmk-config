@@ -29,9 +29,9 @@
 
 /* Global settings */
 
-#define QUICK_TAP_MS 125
-#define GLOBAL_QUICK_TAP_MS 100
-#define TAPPING_TERM_MS 125
+#define QUICK_TAP_MS 175
+#define GLOBAL_QUICK_TAP_MS 150
+#define TAPPING_TERM_MS 280
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s
@@ -76,8 +76,8 @@ MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 // long-tap action on hold, short-tap action on all interrupts
 #define MT_CORE \
     flavor = "tap-preferred"; \
-    tapping-term-ms = <TAPPING_TERM_MS>; \
-    quick-tap-ms = <QUICK_TAP_MS>; \
+    tapping-term-ms = <220>; \
+    quick-tap-ms = <220>; \
     hold-trigger-key-positions = <0>;
 
 &mt { MT_CORE };
@@ -115,12 +115,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 #define SMART_NUM &smart_num NUM 0
 ZMK_BEHAVIOR(smart_num, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <TAPPING_TERM_MS>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&num_dance>;
 )
 ZMK_BEHAVIOR(num_dance, tap_dance,
-    tapping-term-ms = <TAPPING_TERM_MS>;
+    tapping-term-ms = <200>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
 &num_word {  // num-word, requires PR #1451
@@ -186,7 +186,7 @@ ZMK_BEHAVIOR(uc_shift, macro,
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <TAPPING_TERM_MS>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&spc_morph>;
 )
@@ -239,6 +239,14 @@ ZMK_BEHAVIOR(win_sleep, macro,
 #define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
 #define VOL_DOWN    &hmr LCTRL C_VOL_DN
 
+#define X_LT &kp TAB
+#define X_LM &kp LSHIFT
+#define X_LB &kp LCTRL
+#define X_RT &none
+#define X_RM &none
+#define X_RB &none
+
+
 #include "sh.dtsi"
 
 /* Keymap */
@@ -246,6 +254,15 @@ ZMK_BEHAVIOR(win_sleep, macro,
 ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
+/* //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ */
+/*     X_LT     &kp Q         &kp W         &kp E         &kp R         &kp T           X_MT     &kp Y         &kp U         &kp I         &kp O         &kp P           X_RT */
+/* //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ */
+/*     X_LM     &kp A         &kp S         &kp D         &kp F         &kp G           X_MM     &kp H         &hmr RSHFT J  &hmr RGUI K   &hmr LALT L  &hmr RCTRL APOS  X_RM */
+/* //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ */
+/*     X_LB     &kp Z         &kp X         &kp C         &kp V         &kp B           X_MB     &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH       X_RB */
+/* //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤ */
+/*     X_LH                                &mt LGUI ESC &sh_llt NAV SPACE &mt LSHIFT TAB X_MH   &sh_rlt SYM RETURN   &sh_bspc_del_num   &mo FN                                       X_RH */
+/* //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯ */
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT     &kp Q         &kp W         &kp E         &kp R         &kp T           X_MT     &kp Y         &kp U         &kp I         &kp O         &kp P           X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤

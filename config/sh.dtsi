@@ -1,4 +1,4 @@
-#define SH_SHORT_TAP 100
+#define SH_SHORT_TAP 150
 
 ZMK_BEHAVIOR(sh_llt, hold_tap,
   flavor = "balanced";

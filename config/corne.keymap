@@ -1,5 +1,5 @@
 /* source keypos definitions */
-#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 
 /* map Zen's extra keys */
 #define X_LH  //&mt LGUI ESC  // thumb row, left
@@ -12,5 +12,4 @@
 #include "sh_base.keymap"
 
 /* use 5-column layout for Zen */
-/ { chosen { zmk,matrix_transform = &five_column_transform; }; };
-
+/* / { chosen { zmk,matrix_transform = &five_column_transform; }; }; */
