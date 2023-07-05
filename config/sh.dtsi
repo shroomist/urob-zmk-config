@@ -6,8 +6,6 @@ ZMK_BEHAVIOR(sh_llt, hold_tap,
   quick-tap-ms = <QUICK_TAP_MS>;
   global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
   bindings = <&mo>, <&kp>;
-  retro-tap;
-  /* hold-trigger-key-positions = <KEYS_R THUMBS>; */
 )
 
 ZMK_BEHAVIOR(sh_rlt, hold_tap,
@@ -17,8 +15,6 @@ ZMK_BEHAVIOR(sh_rlt, hold_tap,
   global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
   global-quick-tap;
   bindings = <&mo>, <&kp>;
-  retro-tap;
-  /* hold-trigger-key-positions = <KEYS_L THUMBS>; */
 )
 /*
  * Shifted Backspace deletes + Layer Tap
