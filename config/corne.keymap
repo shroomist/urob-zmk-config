@@ -5,6 +5,15 @@
 #define X_LH  //&mt LGUI ESC  // thumb row, left
 #define X_RH  &bs_del       // thumb row, right
 
+#define MEH(k)  LC(LS(LA(k)))
+#define HYP MEH(LG)
+#define X_LT &kp LCTRL
+#define X_LM &kp LSHIFT
+#define X_LB &kp LCTRL
+#define X_RT &kp MINUS
+#define X_RM &kp SEMI
+#define X_RB &kp MEH(SPACE)
+
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
 

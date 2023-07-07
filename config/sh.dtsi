@@ -13,7 +13,6 @@ ZMK_BEHAVIOR(sh_rlt, hold_tap,
   tapping-term-ms = <SH_SHORT_TAP>;
   quick-tap-ms = <QUICK_TAP_MS>;
   global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
-  global-quick-tap;
   bindings = <&mo>, <&kp>;
 )
 /*
