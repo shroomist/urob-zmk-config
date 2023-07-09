@@ -28,3 +28,8 @@ ZMK_BEHAVIOR(sh_bspc_del_num, mod_morph,
   bindings = <&lt NUM BSPC>, <&kp DEL>;
   keep-mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT|MOD_RGUI|MOD_LCTL|MOD_LALT)>;
 )
+
+ZMK_BEHAVIOR(sh_tab_td, tap_dance,
+  tapping-term-ms = <SH_SHORT_TAP>;
+  bindings = <&kp LSHIFT>, <&kp TAB>;
+)
