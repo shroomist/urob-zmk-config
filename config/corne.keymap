@@ -5,12 +5,12 @@
 
 #define MEH(k)  LC(LS(LA(k)))
 #define HYP MEH(LG)
-#define X_LT &kp LCTRL
-#define X_LM &kp LSHIFT
-#define X_LB &kp LCTRL
-#define X_RT &kp MINUS
-#define X_RM &kp SEMI
-#define X_RB &kp MEH(SPACE)
+#define X_LT XXX
+#define X_LM XXX
+#define X_LB XXX
+#define X_RT XXX
+#define X_RM XXX
+#define X_RB XXX
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
