@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   base:
-  - LCTRL
+  - ''
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
   - {t: D, h: LGUI}
@@ -24,8 +24,8 @@ layers:
   - {t: K, h: RGUI}
   - {t: L, h: LALT}
   - {t: ., h: RCTRL}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - Z
   - X
   - C
@@ -36,7 +36,7 @@ layers:
   - ','
   - .
   - /
-  - LC(LS(LA(SPACE)))
+  - ''
   - ESC
   - {t: SPACE, h: nav}
   - TAB
@@ -44,7 +44,7 @@ layers:
   - {t: BSPC, h: num, s: DEL}
   - {t: LC(LS(LA(SPACE))), h: LC(LS(LA(LGUI)))}
   nav:
-  - LCTRL
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LG(LS(GRAVE))
@@ -55,8 +55,8 @@ layers:
   - PG UP
   - END
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - '&caps_word'
   - {t: ▽, type: trans}
   - {t: LG(LBRC), h: LGUI}
@@ -67,8 +67,8 @@ layers:
   - UP
   - RIGHT
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LG(LBKT)
@@ -79,7 +79,7 @@ layers:
   - RA(RIGHT)
   - RG(RIGHT)
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
@@ -87,7 +87,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   sym:
-  - LCTRL
+  - ''
   - '{'
   - '&'
   - '*'
@@ -98,8 +98,8 @@ layers:
   - ']'
   - HOME
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: ':', h: LCTRL}
   - {t: $, h: LALT}
   - {t: '%', h: LGUI}
@@ -110,8 +110,8 @@ layers:
   - {t: '}', h: RGUI}
   - {t: END, h: RALT}
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - '~'
   - '!'
   - '@'
@@ -122,7 +122,7 @@ layers:
   - RG(RBKT)
   - RG(RBRC)
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - '{'
   - '}'
   - _
@@ -130,7 +130,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   num:
-  - LCTRL
+  - ''
   - +
   - '7'
   - '8'
@@ -141,8 +141,8 @@ layers:
   - ']'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: ;, h: LCTRL}
   - {t: '4', h: LALT}
   - {t: '5', h: LGUI}
@@ -153,8 +153,8 @@ layers:
   - {t: '}', h: RGUI}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - '`'
   - '1'
   - '2'
@@ -165,7 +165,7 @@ layers:
   - '>'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - (
   - )
   - '0'
@@ -173,7 +173,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   fn:
-  - LCTRL
+  - ''
   - F12
   - F7
   - F8
@@ -184,8 +184,8 @@ layers:
   - VOL UP
   - NEXT
   - '&win_sleep'
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - F11
   - F4
   - F5
@@ -196,8 +196,8 @@ layers:
   - {t: VOL DN, h: LCTRL}
   - {t: LG(LC(RIGHT)), h: LALT}
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - F10
   - F1
   - F2
@@ -208,7 +208,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -216,7 +216,7 @@ layers:
   - PP
   - {t: ▽, type: trans}
   sys:
-  - LCTRL
+  - ''
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -227,8 +227,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -239,8 +239,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -251,7 +251,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -259,7 +259,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   uc:
-  - LCTRL
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -270,8 +270,8 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -282,8 +282,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -294,7 +294,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -302,7 +302,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   mouse:
-  - LCTRL
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -313,8 +313,8 @@ layers:
   - '&mmv MOVE_VERT(-1250)'
   - '&mwh SCROLL_VERT(100)'
   - {t: ▽, type: trans}
-  - '-'
-  - LSHIFT
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -325,8 +325,8 @@ layers:
   - '&mmv MOVE_VERT(1250)'
   - '&mmv MOVE_HOR(1250)'
   - {t: ▽, type: trans}
-  - ;
-  - LCTRL
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -337,7 +337,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LC(LS(LA(SPACE)))
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
