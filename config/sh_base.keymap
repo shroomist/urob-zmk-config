@@ -218,6 +218,12 @@ ZMK_MACRO(win_sleep,
 
 #include "sh.dtsi"
 
+ZMK_HOLD_TAP(hld_tap,
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&kp>, <&kp>;
+)
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
@@ -230,7 +236,7 @@ ZMK_LAYER(base,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB     &kp Z         &kp X         &kp C         &kp V         &kp B           X_MB     &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH       X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                               &kp ESC &kp SPACE         &sh_llt NAV TAB    X_MH   &sh_rlt SYM RETURN   &sh_bspc_del_num   &hmr MEH(LGUI) F13                  X_RH
+    X_LH                               &hld_tap LSFT ESC &kp SPACE         &sh_llt NAV TAB    X_MH   &sh_rlt SYM RETURN   &sh_bspc_del_num   &hmr MEH(LGUI) F13                  X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 
