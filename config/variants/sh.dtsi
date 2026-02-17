@@ -1,0 +1,34 @@
+// Custom behavior definitions for sh_base.keymap
+// These are simplified versions - adjust as needed
+
+// Simple layer-tap for left thumb: NAV layer with TAB tap
+// (sh = "short hold" - shorter timing than default)
+ZMK_HOLD_TAP(sh_llt,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&kp>;
+)
+
+// Simple layer-tap for right thumb: SYM layer with RETURN tap
+ZMK_HOLD_TAP(sh_rlt,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&kp>;
+)
+
+// Backspace/Delete with smart number layer access
+// Tap: backspace | Hold: activate NUM layer
+// Shift + tap: delete
+ZMK_MOD_MORPH(sh_bspc_del,
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+ZMK_HOLD_TAP(sh_bspc_del_num,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&sh_bspc_del>;
+)
