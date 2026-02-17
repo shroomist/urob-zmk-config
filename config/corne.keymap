@@ -1,0 +1,24 @@
+// Corne 36-key (Choco) configuration
+
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+
+// Map extra keys to none for 36-key layout
+#define X_LT XXX
+#define X_LM XXX
+#define X_LB XXX
+#define X_RT XXX
+#define X_RM XXX
+#define X_RB XXX
+
+// Enable bluetooth
+#define CONFIG_WIRELESS 1
+
+// Use custom timing variant
+#include "variants/sh_base.keymap"
+
+// Use 36-key layout
+/ {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+};

@@ -1,7 +1,26 @@
-# urob's zmk-config
+# urob's zmk-config (Custom Fork)
 
-This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a 34-keys base layout that is re-used for various
+This is a custom fork of [urob's ZMK configuration](https://github.com/urob/zmk-config),
+adapted for **Corne 36-key (Choco)** with custom timing preferences.
+
+## Custom Configuration
+
+**Active keyboard:** Corne 36-key (Choco) split keyboard
+
+**Customizations:**
+- Custom timing variant with 200ms tap timing (vs upstream's 280ms)
+- 36-key layout configuration
+- Preserved Greek/German unicode support
+
+**Syncing with upstream:** This fork tracks urob/zmk-config and syncs monthly.
+Custom configs are isolated in `config/variants/` to minimize merge conflicts.
+
+---
+
+## About the Base Configuration
+
+This configuration is based on [urob's personal ZMK firmware](https://github.com/urob/zmk-config)
+setup. The base consists of a 34-keys layout that is re-used for various
 boards of different sizes, including a Corneish Zen, Glove80 and Planck.
 
 The configuration currently builds against `v0.3` of upstream ZMK, extended by various [ZMK

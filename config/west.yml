@@ -41,6 +41,8 @@ manifest:
       path: modules/zmk/helpers
     - name: zmk-leader-key
       path: modules/zmk/leader-key
+    - name: zmk-nodefree-config
+      path: modules/zmk/nodefree-config
     - name: zmk-tri-state
       path: modules/zmk/tri-state
     - name: zmk-unicode

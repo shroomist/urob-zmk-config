@@ -1,0 +1,31 @@
+name: Check Upstream Sync Status
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Monthly on 1st at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  check-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/urob/zmk-config.git
+          git fetch upstream
+
+      - name: Check sync status
+        run: |
+          BEHIND=$(git rev-list --count HEAD..upstream/main)
+          if [ $BEHIND -gt 0 ]; then
+            echo "::warning::Fork is $BEHIND commits behind upstream/main"
+            echo ""
+            echo "Recent upstream changes:"
+            git log --oneline --no-decorate HEAD..upstream/main | head -10
+          else
+            echo "Fork is up to date with upstream"
+          fi
